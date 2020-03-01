@@ -51,7 +51,7 @@ tmux_conf_theme_window_bg='default'
 # highlight focused pane (tmux >= 2.1), possible values are:
 #   - true
 #   - false (default)
-tmux_conf_theme_highlight_focused_pane=false
+tmux_conf_theme_highlight_focused_pane=true
 
 # focused pane colours:
 tmux_conf_theme_focused_pane_fg='default'
@@ -60,7 +60,7 @@ tmux_conf_theme_focused_pane_bg='#0087d7'               # light blue
 # pane border style, possible values are:
 #   - thin (default)
 #   - fat
-tmux_conf_theme_pane_border_style=thin
+tmux_conf_theme_pane_border_style=fat
 
 # pane borders colours:
 tmux_conf_theme_pane_border='#444444'                   # gray
@@ -268,7 +268,7 @@ tmux_conf_theme_clock_style='24'
 #   - false (default)
 # on macOS, this requires installing reattach-to-user-namespace, see README.md
 # on Linux, this requires xsel or xclip
-tmux_conf_copy_to_os_clipboard=false
+tmux_conf_copy_to_os_clipboard=true
 
 
 # -- user customizations -------------------------------------------------------
@@ -297,3 +297,20 @@ set -g mouse on
 
 # Reload the file with Prefix r
 bind r source-file ~/.tmux.conf.local \; display "Reloaded!"
+
+# splitting panes
+bind | split-window -h
+bind - split-window -v
+
+# moving between panes
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+#Maximize and restore a pane
+unbind Up
+bind Up new-window -d -n tmp \; swap-pane -s tmp.l \; select-window -t tmp
+unbind Down
+bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
+
