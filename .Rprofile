@@ -6,3 +6,6 @@ library(purrr)
 
 #functions
 p = function(...){paste(...,sep="")}
+s = function(...){source(...)}
+d = function(...){dim(...)}
+dn = function(...){dimnames(...)}
