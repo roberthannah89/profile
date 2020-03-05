@@ -1,3 +1,19 @@
+# Powerline configuration
+#if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+#  powerline-daemon -q
+#  POWERLINE_BASH_CONTINUATION=1
+#  POWERLINE_BASH_SELECT=1
+#  source /usr/share/powerline/bindings/bash/powerline.sh
+#fi
+
+#https://powerline.readthedocs.io/en/latest/usage/shell-prompts.html#bash-prompt
+. /home/roberthannah89/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+
+#####
+
+export TERM='screen-256color'
+export EDITOR='vim'
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
