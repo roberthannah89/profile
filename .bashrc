@@ -7,7 +7,9 @@
 #fi
 
 #https://powerline.readthedocs.io/en/latest/usage/shell-prompts.html#bash-prompt
-. /home/roberthannah89/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+powerline_dir=$(python -c 'import os, powerline; print(os.path.dirname(powerline.__file__))')
+powerline_sh_path="$powerline_dir/bindings/bash/powerline.sh"
+source "$powerline_sh_path"
 
 #####
 
